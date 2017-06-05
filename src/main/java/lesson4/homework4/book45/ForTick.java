@@ -1,0 +1,14 @@
+package lesson4.homework4.book45;
+
+/**
+ * Created by Yevhen on 18.04.2017.
+ */
+public class ForTick {
+    public static void main(String[] args) {
+        int n;
+
+        for (n = -10; n < 0; n++) {
+            System.out.println("такт " + n);
+        }
+    }
+}

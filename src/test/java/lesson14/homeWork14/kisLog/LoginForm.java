@@ -1,4 +1,4 @@
-package lesson14.homeWork14;
+package lesson14.homeWork14.kisLog;
 
 /**
  * Created by Stan on 04.06.2017.

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="SuiteName">
+<suite name="Kisma">
     <parameter name="email" value="test@gmail.com"></parameter>
     <parameter name="password" value="qwerty"></parameter>
-    <test name="TestName">
+    <parameter name="ageBefore" value="ageAfter"></parameter>
+    <test name="login">
         <classes>
-            <class name="lesson8.ParamsExample">
+            <class name="lesson14.homeWork14.kisLog.KismiaLogin">
+            </class>
+        </classes>
+    </test>
+    <test name="SetFilters">
+        <classes>
+            <class name="lesson14.homeWork14.filter.FilterSet">
             </class>
         </classes>
     </test>

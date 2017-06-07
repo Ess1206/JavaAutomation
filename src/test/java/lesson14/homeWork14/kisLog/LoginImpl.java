@@ -1,4 +1,4 @@
-package lesson14.homeWork14;
+package lesson14.homeWork14.kisLog;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

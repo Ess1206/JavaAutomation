@@ -67,6 +67,9 @@ public class FilterImpl implements FilterFom {
         List<WebElement> listOfAge = new ArrayList(driver.findElements(By.cssSelector(".settings-path__select-block [name=\"search_age_from\"] option")));
         ageBefore = ageBefore-17;
         listOfAge.get(ageBefore).click();
+
+        driver.findElement(By.cssSelector(".settings-content")).click();
+
     }
 
 
@@ -76,14 +79,16 @@ public class FilterImpl implements FilterFom {
         ageAfter = ageAfter-17;
         List<WebElement> listOfAge = new ArrayList(driver.findElements(By.cssSelector(".settings-path__select-block [name=\"search_age_to\"] option")));
         listOfAge.get(ageAfter).click();
+        driver.findElement(By.cssSelector(".settings-content")).click();
+
     }
 
     @Override
-    public void submit(boolean trueORfolse) {
-        if (trueORfolse)
-            driver.findElement(By.className("button-FR settings__button button--flat-green js_save")).click();
+    public void submit(boolean yesNo) {
+        if (yesNo)
+            driver.findElement(By.cssSelector(".settings-path.active button")).click();
         else
-            driver.findElement(By.className("settings__cancel-link link js_cancel")).click();
+            driver.findElement(By.cssSelector(".settings-path.active span")).click();
 
     }
 }

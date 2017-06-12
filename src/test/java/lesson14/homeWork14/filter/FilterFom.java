@@ -14,5 +14,5 @@ public interface FilterFom {
 
     void setAgeAfter(int ageAfter);
 
-    void submit( boolean yesORno );
+    void submit( boolean yesNo );
 }

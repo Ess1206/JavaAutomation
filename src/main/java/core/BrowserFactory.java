@@ -1,5 +1,6 @@
 package core;
 
+import core.lesteners.DriverEventListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -10,9 +11,7 @@ import org.testng.annotations.BeforeTest;
 /**
  * Created by Yevhen on 22.05.2017.
  */
-public class BrowserFactory {
-
-    public WebDriver driver;
+public class BrowserFactory extends MethodsFactory {
 
 
     @BeforeTest

@@ -19,19 +19,14 @@ public class FilterSet extends BrowserFactory {
     public void setFilters(){
         FilterImpl filterPage = new FilterImpl(driver);
 
-        LoginImpl loginpage = new LoginImpl(driver);
 
-        loginpage.openPage("https://kismia.com/");
-        loginpage.typeLogin("blabla@mfsa.ru");
-        loginpage.typePassword("Defect1206");
-        loginpage.submit();
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("content")));
 
         filterPage.openPage("https://kismia.com/profile/settings");
         filterPage.openTab("profileSearch");
-        filterPage.setSex("male");
-        filterPage.setAgeBefore(18);
+        filterPage.setSex("female");
+        filterPage.setAgeBefore(19);
         filterPage.setAgeAfter(20);
         filterPage.submit(true);
     }

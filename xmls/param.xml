@@ -6,14 +6,24 @@
     <parameter name="ageBefore" value="ageAfter"></parameter>
     <test name="login">
         <classes>
-            <class name="lesson14.homeWork14.kisLog.KismiaLogin">
-            </class>
         </classes>
     </test>
     <test name="SetFilters">
         <classes>
+            <class name="lesson14.homeWork14.kisLog.KismiaLogin">
+            </class>
             <class name="lesson14.homeWork14.filter.FilterSet">
             </class>
+
+        </classes>
+    </test>
+    <test name="DoLike">
+        <classes>
+            <class name="lesson14.homeWork14.kisLog.KismiaLogin">
+            </class>
+            <class name="lesson14.homeWork14.doLike.DoLike">
+            </class>
+
         </classes>
     </test>
 </suite>

@@ -36,7 +36,7 @@ public class LoginImpl implements LoginForm {
     @Override
     public void submit() {
 
-        driver.findElement(By.cssSelector("#sign-in-form > button")).click();
+        driver.findElement(By.cssSelector("#sign-in-form .submit")).click();
 
     }
 

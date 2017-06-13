@@ -12,7 +12,7 @@ public class MethodsFactory {
 
     protected static WebDriver driver;
 
-    public static WebDriver getDriver(){
+    public static WebDriver driver(){
         return driver;
     }
 
@@ -23,7 +23,7 @@ public class MethodsFactory {
     }
 
     protected WebDriverWait getwebDriverWait (long timeout){
-        return new WebDriverWait(getDriver(),timeout);
+        return new WebDriverWait(driver(),timeout);
     }
 
 

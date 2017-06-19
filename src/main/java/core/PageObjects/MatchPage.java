@@ -19,6 +19,7 @@ public class MatchPage extends MethodsFactory {
     public void open(){
         get("https://kismia.com/matches");
     }
+
     public String getCurrentUserID(){
         return userID.getAttribute("data-uid");
     }

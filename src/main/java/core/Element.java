@@ -14,7 +14,7 @@ public class Element extends MethodsFactory {
     public Element(By by , String name){
         this.by = by;
         this.name = name;
-    };
+    }
     public Element(By by ){
         this.by = by;
     };

@@ -15,9 +15,12 @@ import java.nio.Buffer;
 /**
  * Created by Stan on 15.06.2017.
  */
-@Test
+
 public class HandlCookie extends BrowserFactory {
 
+
+
+    @Test
     public void doLogin() throws InterruptedException {
         MainPage mainPage = new MainPage();
         driver.get("https://kismia.com/");
@@ -27,6 +30,9 @@ public class HandlCookie extends BrowserFactory {
         createFileWithCookies();
 
     }
+
+
+
     public static void createFileWithCookies(){
         File file = new File("Cookie.data");
 

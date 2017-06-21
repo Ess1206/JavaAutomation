@@ -13,8 +13,9 @@ import java.util.StringTokenizer;
  * Created by Stan on 15.06.2017.
  */
 public class LoadCookiesData extends BrowserFactory {
+
 @Test
-    public void openFile() {
+    public void openFile() throws InterruptedException {
 
 
         try {
@@ -35,19 +36,24 @@ public class LoadCookiesData extends BrowserFactory {
 
                     //ne poniatno !!!!!
 
-                    String val;
+/*                    String val;
                     if (!(val = token.nextToken()).equals("null")) {
                         expiry = new Date(val);
 
                     }
-                    Boolean isSecure = new Boolean(token.nextToken()).booleanValue();
-                    Cookie ck = new Cookie(name, value, domain, path, expiry, isSecure);
+                    Boolean isSecure = new Boolean(token.nextToken()).booleanValue();*/
+                    driver.get("https://kismia.com");
+                    Cookie ck =  new Cookie(name, value);//new Cookie(name, value, domain, path, expiry, isSecure);
+
                     driver.manage().addCookie(ck);
                 }
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        driver.get("https://kismia.com/");
+        driver.get("https://kismia.com/matches");
+        driver.wait(1000);
     }
+
+
 }

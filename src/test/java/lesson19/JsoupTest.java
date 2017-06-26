@@ -1,7 +1,6 @@
 package lesson19;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
+import okhttp3.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,22 +17,38 @@ public class JsoupTest {
     @Test
     public void testJsoup() throws IOException {
         OkHttpClient client = new OkHttpClient.Builder()
+                .cookieJar(new DefaultCookiesStorage())
                 .addInterceptor(new UserAgentInterceptor("Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.85 Safari/537.36")).build();
 
-        String html = client.newCall(new Request.Builder().url("http://www.business-template.com/").build()).execute().body().string();
+        String html = client.newCall(new Request.Builder().url("http://www.kismia.com/").build()).execute().body().string();
 
         Document document = Jsoup.parse(html);
 
-        System.out.println(document.body());
+        for (Cookie cookie: DefaultCookiesStorage.cookies
+             ) {
+            System.out.println(cookie.name());
+
+        }
+
+        RequestBody requestBody = new FormBody.Builder()
+                .add("email", "blabla@mfsa.ru")
+                .add("password", "Defect1206").build();
+        Request request = new Request.Builder().url("https://kismia.com/sign/in/").post(requestBody).build();
+
+        System.out.println(client.newCall(request).execute().body().string());
+
+
+
+
+      /*  System.out.println(document.body());
 
         Elements select = document.select(".hero-title");
         Element element = select.get(0);
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+
+
         System.out.println(element.text());
+*/
+
 
     }
 }

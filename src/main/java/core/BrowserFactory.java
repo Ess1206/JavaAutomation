@@ -18,6 +18,7 @@ public class BrowserFactory extends MethodsFactory {
     public void setUp(){
         driver = new ChromeDriver();
         driver = new EventFiringWebDriver(driver).register(new DriverEventListener());
+        driver.manage().window().maximize();
     }
 
 

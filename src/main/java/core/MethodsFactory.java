@@ -18,7 +18,6 @@ public class MethodsFactory {
 
     public void get(String url){
         driver.get(url);
-
         getwebDriverWait(WaitTime.DEFAULT_ELEMENT_WAIT).until(CustomConditions.pageLoader());
     }
 

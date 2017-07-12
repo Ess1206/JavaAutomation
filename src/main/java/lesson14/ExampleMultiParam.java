@@ -1,5 +1,6 @@
 package lesson14;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -19,7 +20,9 @@ public class ExampleMultiParam {
     }
 
     @Test
-    public void testMutiply(){
+    @Parameters({"userEmail"})
+    public void testMutiply(String userEmail){
+        System.out.println(userEmail);
         setRecipienceList("stas ", "test" , "sdfsdf");
     }
 }

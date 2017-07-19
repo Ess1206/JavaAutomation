@@ -110,7 +110,7 @@ public class KissMiaTests {
     }
     @Step
     public static void TestAsert(){
-        Assert.assertTrue(true);
+        Assert.fail();
         System.out.println("assert");
     }
 }

@@ -127,8 +127,8 @@
       <file leaf-file-name="KissMiaTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/lesson8/homeWork8/KissMiaTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="85" column="20" lean-forward="false" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+            <state relative-caret-position="792">
+              <caret line="112" column="22" lean-forward="false" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -903,7 +903,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500485170785</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="HW18&#10;add &#10; &lt;!--  Gson: Java to Json conversion --&gt;&#10;        &lt;dependency&gt;&#10;            &lt;groupId&gt;com.google.code.gson&lt;/groupId&gt;&#10;            &lt;artifactId&gt;gson&lt;/artifactId&gt;&#10;            &lt;version&gt;2.8.0&lt;/version&gt;&#10;            &lt;scope&gt;compile&lt;/scope&gt;&#10;        &lt;/dependency&gt;">
+      <created>1500487213176</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1500487213176</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1399,8 +1406,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/lesson8/homeWork8/KissMiaTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="85" column="20" lean-forward="false" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+        <state relative-caret-position="792">
+          <caret line="112" column="22" lean-forward="false" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
           <folding />
         </state>
       </provider>

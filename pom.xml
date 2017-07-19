@@ -8,9 +8,16 @@
     <artifactId>Lessons</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <properties>
+    
+	<properties>
+	
         <buildDirectory>${project.basedir}/target</buildDirectory>
         <suite>testng.xml</suite>
+		<allure.results.directory>${buildDirectory}/allure-results</allure.results.directory>
+        <resultsPatternAllure>**/allure-results</resultsPatternAllure>
+        <allure.version>1.5.2</allure.version>
+        <aspectj.version>1.8.3</aspectj.version>
+		
     </properties>
 
     <build>
@@ -30,25 +37,78 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19</version>
-                <configuration>
+                
+				<configuration>
+				<argLine>
+                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+                    </argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>${suite}</suiteXmlFile>
                     </suiteXmlFiles>
 
                     <systemProperties>
                         <property>
+                            <name>allure.results.directory</name>
+                            <value>${allure.results.directory}</value>
+                        </property>
+						
+						<property>
+						
                             <name>userEmail</name>
                             <value>azaza@gmail.com</value>
                         </property>
                     </systemProperties>
                 </configuration>
+				
+				<dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
+			
+			<plugin>
+                <groupId>ru.yandex.qatools.allure</groupId>
+                <artifactId>allure-maven-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <resultsDirectory>allure-results</resultsDirectory>
+                    <reportDirectory>allure-report</reportDirectory>            
+			</configuration>
+            </plugin>
+			
 
         </plugins>
     </build>
 
+	<reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>ru.yandex.qatools.allure</groupId>
+                <artifactId>allure-maven-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+        </plugins>
+    </reporting>
 
     <dependencies>
+	
+	<!--Allure TestNG Adaptor -->
+        <dependency>
+            <groupId>ru.yandex.qatools.allure</groupId>
+            <artifactId>allure-testng-adaptor</artifactId>
+            <version>${allure.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>junit</artifactId>
+                    <groupId>junit</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+	
         <!--TestNG -->
         <dependency>
             <groupId>org.testng</groupId>

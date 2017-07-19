@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.concurrent.TimeUnit;
 
@@ -82,6 +83,7 @@ public class KissMiaTests {
         driver.findElement(By.xpath("//li/a[@href=\"/messages\"][@class=\"new-header-main-nav__link new-header-main-nav__link--messages\"]")).click();
         driver.findElement(By.xpath("//a[@href=\"/matches\"][@class=\"button--yellow-and-purple\"]")).click();
 
+        TestAsert();
     }
 
     public static void personalData(){
@@ -106,5 +108,9 @@ public class KissMiaTests {
         // //input[@name="gender"][@value="f"] - female
 
     }
-
+    @Step
+    public static void TestAsert(){
+        Assert.assertTrue(true);
+        System.out.println("assert");
+    }
 }
